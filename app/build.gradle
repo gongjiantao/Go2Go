@@ -8,7 +8,7 @@ android {
     ndkVersion = '26.2.11394342'
     compileSdk = 32
     buildToolsVersion = '36.0.0'
-    namespace = 'com.zcshou.gogogo'
+    namespace = 'com.gongjiantao.mode'
 
     signingConfigs {
         debug {
@@ -26,7 +26,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.zcshou.gogogo"
+        applicationId "com.gongjiantao.mode"
         minSdkVersion 27
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 32
