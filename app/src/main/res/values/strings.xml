@@ -1,32 +1,42 @@
 <resources>
-    <string name="app_name">影梭</string>
-    <string name="app_settings">设置</string>
-    <string name="app_history">历史记录</string>
-    <string name="app_author">ZCShou</string>
-    <string name="app_email">zcsexp@gmail.com</string>
-    <string name="app_statement">仅供学习使用，否则后果自负！</string>
-    <string name="app_service_tips">影梭服务正在运行中</string>
-    <string name="app_agreement">用户协议</string>
-    <string name="app_agreement_content">"1. 本软件专为学习 Android 开发使用，不会收集任何用户数据。"
-    "严禁利用本软件侵犯他人隐私权或者用于游戏牟利，如软件使用者不能遵守此规定， 请立即删除。"
-    "对于因用户使用本软件而造成自身或他人隐私泄露等任何不良后果，均由用户自行承担，软件作者不负任何责任。\n"
-    "2. 用户不得对本软件产品进行反向工程（reverse engineer）、反向编译（decompile）或反汇编（disassemble）， 违者属于侵权行为，并自行承担由此产生的不利后果。\n"
-    "3. 软件保证不含任何病毒，木马，等破坏用户数据的恶意代码，但是由于本软件产品可以通过网络等途径下载、传播，对于从非软件作者指定站点下载的本软件产品软件作者无法保证该软件是否感染计算机病毒、是否隐藏有伪装的特洛伊木马程序或者黑客软件，不承担由此引起的直接和间接损害责任。\n"
-    "4. 软件会不断更新，以便及时为用户提供新功能和修正软件中的BUG。 同时软件作者保证本软件在升级过程中也不含有任何旨在破坏用户计算机数据的恶意代码。\n"
-    "5. 由于用户计算机软硬件环境的差异性和复杂性，本软件所提供的各项功能并不能保证在任何情况下都能正常执行或达到用户所期望的结果。 用户使用本软件所产生的一切后果，软件作者不承担任何责任。\n"
-    "6. 如果用户自行安装本软件，即表明用户信任软件作者，自愿选择安装本软件，并接受本协议所有条款。 如果用户不接受本协议，请立即删除。\n"
+    <string name="app_name">随便走</string>
+    <string name="welcome_title">随便走</string>
+    <string name="welcome_subtitle">探索世界 · 记录足迹</string>
+    <string name="app_settings">偏好</string>
+    <string name="app_history">足迹</string>
+    <string name="app_author">随便走团队</string>
+    <string name="app_email">jiantaogong8@gmail.com</string>
+    <string name="app_statement">本软件仅供学习研究，请勿用于非法用途！</string>
+    <string name="app_service_tips">随便走服务运行中</string>
+    <string name="app_agreement">服务条款</string>
+    <string name="app_agreement_content">"欢迎使用随便走。仔细看，莫违法哦。\n\n"
+    
+    "一、服务说明\n"
+    "随便走是一款位置信息的工具类应用，为用户提供便捷的位置记录与模拟服务。\n\n"
+    
+    "二、隐私保护\n"
+    "我们高度重视您的隐私。随便走不会收集、存储或上传您的任何个人信息、位置数据、设备信息至任何远程服务器。所有数据均存储在您的设备本地，您可以随时清除。\n\n"
+    
+    "三、使用规范\n"
+    "1. 您承诺仅将本软件用于合法目的。严禁利用本软件从事任何违法违规活动，包括但不限于：侵犯他人隐私、进行欺诈行为、干扰其他应用的正常运行。\n"
+    "2. 您不得对本软件进行反向工程、反编译、反汇编或以其他方式试图获取源代码。\n\n"
+    
+    "四、免责声明\n"
+    "1. 本软件按"原样"提供，不提供任何明示或暗示的保证。\n"
+    "2. 您理解并同意，使用本软件的风险由您自行承担。对于因使用或无法使用本软件而导致的任何直接或间接损失，开发者不承担任何责任。\n"
+    "3. 本软件功能可能因设备差异、系统版本等因素存在差异，开发者不保证所有功能在所有设备上均能正常运行。\n\n"
+    
+    "五、条款变更\n"
+    "我们保留随时修改本条款的权利。修改后的条款将在应用内公布，继续使用即视为接受修改后的条款。\n\n"
+    
+    "六、联系方式\n"
+    "如对本条款有任何疑问，请通过应用内提供的联系方式与我们取得联系。\n\n"
+    
+    "如您不同意以上任一条款，就卸载随便走吧。"
     </string>
-    <string name="app_privacy">隐私政策</string>
-    <string name="app_privacy_content">"1. 本软件专为学习 Android 开发使用，不会收集任何用户数据。\n"
-    "2. 用户不得对本软件产品进行反向工程（reverse engineer）、反向编译（decompile）或反汇编（disassemble）， 违者属于侵权行为，并自行承担由此产生的不利后果。\n"
-    "3. 软件保证不含任何病毒，木马，等破坏用户数据的恶意代码，但是由于本软件产品可以通过网络等途径下载、传播，对于从非软件作者指定站点下载的本软件产品软件作者无法保证该软件是否感染计算机病毒、是否隐藏有伪装的特洛伊木马程序或者黑客软件，不承担由此引起的直接和间接损害责任。\n"
-    "4. 软件会不断更新，以便及时为用户提供新功能和修正软件中的BUG。 同时软件作者保证本软件在升级过程中也不含有任何旨在破坏用户计算机数据的恶意代码。\n"
-    "5. 由于用户计算机软硬件环境的差异性和复杂性，本软件所提供的各项功能并不能保证在任何情况下都能正常执行或达到用户所期望的结果。 用户使用本软件所产生的一切后果，软件作者不承担任何责任。\n"
-    "6. 如果用户自行安装本软件，即表明用户信任软件作者，自愿选择安装本软件，并接受本协议所有条款。 如果用户不接受本协议，请立即删除。\n"
-    </string>
-    <string name="app_agreement_privacy">已阅读《用户协议》和《隐私政策》</string>
-    <string name="app_error_agreement">必须先接受\n《用户协议》和《隐私政策》</string>
-    <string name="app_error_read">请依次阅读并接受\n《用户协议》和《隐私政策》</string>
+    <string name="app_agreement_privacy">已阅读并同意《服务条款》</string>
+    <string name="app_error_agreement">请先阅读并同意《服务条款》</string>
+    <string name="app_error_read">请先阅读并接受《服务条款》</string>
     <string name="app_error_gps">定位不可用，请检查 GPS 是否开启</string>
     <string name="app_error_network">网络不可用，请检查网络连接</string>
     <string name="app_error_permission">权限不足，请授予相关权限</string>
@@ -48,9 +58,9 @@
     <string name="app_location_save">位置已保存</string>
 
     <!-- 欢迎页 -->
-    <string name="welcome_btn_txt">进入应用</string>
-    <string name="app_btn_agree">同意并继续</string>
-    <string name="app_btn_disagree">不同意</string>
+    <string name="welcome_btn_txt">开始随便走</string>
+    <string name="app_btn_agree">同意</string>
+    <string name="app_btn_disagree">拒绝</string>
 
     <!-- 移动相关参数 -->
     <string name="setting_group_move">移动</string>
@@ -101,6 +111,12 @@
     <string name="joystick_walk">步行</string>
     <string name="joystick_run">跑步</string>
     <string name="joystick_bike">自行车</string>
+    <string name="joystick_auto">自动路线</string>
+    <string name="joystick_route_add">添加途经点</string>
+    <string name="joystick_route_play">开始移动</string>
+    <string name="joystick_route_stop">停止移动</string>
+    <string name="joystick_route_clear">清空路线</string>
+    <string name="joystick_route_tips">点击地图添加途经点</string>
     <!-- 导航页 -->
     <string name="nav_drawer_open">打开导航菜单</string>
     <string name="nav_drawer_close">关闭导航菜单</string>
@@ -132,7 +148,7 @@
     <!-- 更新 -->
     <string name="update_title">新版本可用</string>
     <string name="update_downloading">升级文件下载中。。。</string>
-    <string name="update_last">恭喜，影梭已是最新版</string>
+    <string name="update_last">恭喜，随便走已是最新版</string>
     <string name="update_download">立即下载</string>
     <string name="update_ignore">忽略一次</string>
     <string name="update_time">更新时间：</string>

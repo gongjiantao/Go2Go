@@ -64,11 +64,61 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal|center_vertical|bottom"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="80dp"
             android:background="@drawable/circle_shape_bg"
             android:contentDescription="@null"
             android:src="@drawable/ic_position"
             android:theme="@style/RippleWhite" />
+
+        <LinearLayout
+            android:id="@+id/route_bar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:background="#F0FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <ImageButton
+                android:id="@+id/route_add"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/joystick_route_add"
+                android:src="@drawable/ic_route_add"
+                android:theme="@style/RippleWhite" />
+
+            <TextView
+                android:id="@+id/route_count"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0 个点"
+                android:textColor="@color/textPrimary"
+                android:textSize="13sp" />
+
+            <ImageButton
+                android:id="@+id/route_play"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/joystick_route_play"
+                android:src="@drawable/ic_play"
+                android:theme="@style/RippleWhite" />
+
+            <ImageButton
+                android:id="@+id/route_clear"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/joystick_route_clear"
+                android:src="@drawable/ic_route_clear"
+                android:theme="@style/RippleWhite" />
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/map_search_linear"

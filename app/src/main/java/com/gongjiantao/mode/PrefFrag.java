@@ -11,14 +11,14 @@ import androidx.preference.SwitchPreferenceCompat;
 
 import com.baidu.mapapi.SDKInitializer;
 import com.elvishew.xlog.XLog;
-import com.gongjiantao.mode.utils.GoUtils;
+import com.gongjiantao.mode.utils.SysUtil;
 
 import java.util.Objects;
 
-public class FragmentSettings extends PreferenceFragmentCompat {
+public class PrefFrag extends PreferenceFragmentCompat {
 
     // Set a non-empty decimal EditTextPreference
-    private void setupDecimalEditTextPreference(EditTextPreference preference) {
+    private void setupDecPref(EditTextPreference preference) {
         if (preference != null) {
             preference.setSummaryProvider((Preference.SummaryProvider<EditTextPreference>) EditTextPreference::getText);
             preference.setOnBindEditTextListener(editText -> {
@@ -27,7 +27,7 @@ public class FragmentSettings extends PreferenceFragmentCompat {
             });
             preference.setOnPreferenceChangeListener((pref, newValue) -> {
                 if (newValue.toString().trim().isEmpty()) {
-                    GoUtils.DisplayToast(this.getContext(), getResources().getString(R.string.app_error_input_null));
+                    SysUtil.toast(this.getContext(), getResources().getString(R.string.app_error_input_null));
                     return false;
                 }
                 return true;
@@ -40,30 +40,30 @@ public class FragmentSettings extends PreferenceFragmentCompat {
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.preferences_main);
 
-        ListPreference pfJoystick = findPreference("setting_joystick_type");
-        if (pfJoystick != null) {
+        ListPreference pfJsk = findPreference("setting_joystick_type");
+        if (pfJsk != null) {
             // 使用自定义 SummaryProvider
-            pfJoystick.setSummaryProvider((Preference.SummaryProvider<ListPreference>) preference -> Objects.requireNonNull(preference.getEntry()));
-            pfJoystick.setOnPreferenceChangeListener((preference, newValue) -> !newValue.toString().trim().isEmpty());
+            pfJsk.setSummaryProvider((Preference.SummaryProvider<ListPreference>) preference -> Objects.requireNonNull(preference.getEntry()));
+            pfJsk.setOnPreferenceChangeListener((preference, newValue) -> !newValue.toString().trim().isEmpty());
         }
 
-        EditTextPreference pfWalk = findPreference("setting_walk");
-        setupDecimalEditTextPreference(pfWalk);
+        EditTextPreference pfWk = findPreference("setting_walk");
+        setupDecPref(pfWk);
 
-        EditTextPreference pfRun = findPreference("setting_run");
-        setupDecimalEditTextPreference(pfRun);
+        EditTextPreference pfRn = findPreference("setting_run");
+        setupDecPref(pfRn);
 
-        EditTextPreference pfBike = findPreference("setting_bike");
-        setupDecimalEditTextPreference(pfBike);
+        EditTextPreference pfBk = findPreference("setting_bike");
+        setupDecPref(pfBk);
 
-        EditTextPreference pfAltitude = findPreference("setting_altitude");
-        setupDecimalEditTextPreference(pfAltitude);
+        EditTextPreference pfAlt = findPreference("setting_altitude");
+        setupDecPref(pfAlt);
 
-        EditTextPreference pfLatOffset = findPreference("setting_lat_max_offset");
-        setupDecimalEditTextPreference(pfLatOffset);
+        EditTextPreference pfLOff = findPreference("setting_lat_max_offset");
+        setupDecPref(pfLOff);
 
-        EditTextPreference pfLonOffset = findPreference("setting_lon_max_offset");
-        setupDecimalEditTextPreference(pfLonOffset);
+        EditTextPreference pfLngOff = findPreference("setting_lon_max_offset");
+        setupDecPref(pfLngOff);
 
         SwitchPreferenceCompat pLog = findPreference("setting_log_off");
         if (pLog != null) {
@@ -83,15 +83,15 @@ public class FragmentSettings extends PreferenceFragmentCompat {
             });
         }
 
-        EditTextPreference pfPosHisValid = findPreference("setting_history_expiration");
-        setupDecimalEditTextPreference(pfPosHisValid);
+        EditTextPreference pfHExp = findPreference("setting_history_expiration");
+        setupDecPref(pfHExp);
 
         // 设置版本号
-        String verName;
-        verName = GoUtils.getVersionName(FragmentSettings.this.getContext());
-        Preference pfVersion = findPreference("setting_version");
-        if (pfVersion != null) {
-            pfVersion.setSummary(verName);
+        String ver;
+        ver = SysUtil.getVer(PrefFrag.this.getContext());
+        Preference pfVer = findPreference("setting_version");
+        if (pfVer != null) {
+            pfVer.setSummary(ver);
         }
     }
 }

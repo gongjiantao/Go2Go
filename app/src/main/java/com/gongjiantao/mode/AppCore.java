@@ -18,7 +18,7 @@ import com.elvishew.xlog.printer.file.naming.ChangelessFileNameGenerator;
 
 import java.io.File;
 
-public class GoApplication extends Application {
+public class AppCore extends Application {
     public static final String APP_NAME = "GoGoGo";
     public static final String LOG_FILE_NAME = APP_NAME + ".log";
     private static final long MAX_TIME = 1000 * 60 * 60 * 24 * 3; // 3 days
@@ -27,7 +27,7 @@ public class GoApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        initXlog();
+        initLog();
 
         // 百度地图 7.5 开始，要求必须同意隐私政策，默认为false
         SDKInitializer.setAgreePrivacy(this, true);
@@ -43,7 +43,7 @@ public class GoApplication extends Application {
     /**
      * Initialize XLog.
      */
-    private void initXlog() {
+    private void initLog() {
         File logPath = getExternalFilesDir("Logs");
         if (logPath != null) {
             LogConfiguration config = new LogConfiguration.Builder()

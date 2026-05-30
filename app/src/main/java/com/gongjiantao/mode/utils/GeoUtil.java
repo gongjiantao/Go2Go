@@ -1,6 +1,6 @@
 package com.gongjiantao.mode.utils;
 
-public class MapUtils {
+public class GeoUtil {
 //    public final static String COORDINATE_TYPE_GCJ02 = "gcj02";
 //    public final static String COORDINATE_TYPE_BD09LL = "bd09ll";
 //    public final static String COORDINATE_TYPE_BD09MC = "bd09";
@@ -90,4 +90,15 @@ public class MapUtils {
 //    private static boolean out_of_china(double lng, double lat) {
 //        return (lng < 72.004 || lng > 137.8347) || ((lat < 0.8293 || lat > 55.8271));
 //    }
+
+    public static double distance(double lat1, double lng1, double lat2, double lng2) {
+        double R = 6371000;
+        double dLat = (lat2 - lat1) * pi / 180.0;
+        double dLng = (lng2 - lng1) * pi / 180.0;
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2)
+                + Math.cos(lat1 * pi / 180.0) * Math.cos(lat2 * pi / 180.0)
+                * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return R * c;
+    }
 }

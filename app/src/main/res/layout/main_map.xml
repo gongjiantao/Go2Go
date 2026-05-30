@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".HomeAct"
     tools:showIn="@layout/main_content">
 
     <RelativeLayout
@@ -101,6 +101,19 @@
             app:srcCompat="@drawable/ic_input"
             app:tint="@color/colorAccent" />
 
+        <ImageButton
+            android:id="@+id/btn_auto_mode"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="190dp"
+            android:layout_marginEnd="10dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/joystick_auto"
+            android:theme="@style/RippleWhite"
+            app:srcCompat="@drawable/ic_play"
+            app:tint="@color/colorAccent" />
+
 
         <TextView
             android:layout_width="match_parent"
@@ -110,5 +123,72 @@
             android:textSize="10sp"
             android:text="@string/app_statement"
             tools:ignore="SmallSp" />
+
+        <LinearLayout
+            android:id="@+id/route_bar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="#F0FFFFFF"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <ImageButton
+                android:id="@+id/route_add"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/joystick_route_add"
+                android:src="@drawable/ic_route_add"
+                android:theme="@style/RippleWhite" />
+
+            <TextView
+                android:id="@+id/route_count"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0 个途经点"
+                android:textColor="@color/textPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/route_play"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/joystick_route_play"
+                android:src="@drawable/ic_play"
+                android:theme="@style/RippleWhite" />
+
+            <ImageButton
+                android:id="@+id/route_clear"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/joystick_route_clear"
+                android:src="@drawable/ic_route_clear"
+                android:theme="@style/RippleWhite" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/route_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="点击地图添加途经点"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="#CCFF80AB"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:visibility="gone" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
