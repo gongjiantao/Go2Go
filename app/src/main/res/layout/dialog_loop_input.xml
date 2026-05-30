@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="16dp">
+
+    <EditText
+        android:id="@+id/loop_count_input"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="请输入循环圈数"
+        android:inputType="number"
+        android:text="5"
+        android:textColor="@color/textPrimary"
+        android:textSize="16sp"
+        android:gravity="center" />
+</LinearLayout>

@@ -1,0 +1,156 @@
+<resources>
+    <string name="app_name">随便走</string>
+    <string name="welcome_title">随便走</string>
+    <string name="welcome_subtitle">探索世界 · 记录足迹</string>
+    <string name="app_settings">偏好</string>
+    <string name="app_history">足迹</string>
+    <string name="app_author">随便走团队</string>
+    <string name="app_email">jiantaogong8@gmail.com</string>
+    <string name="app_statement">本软件仅供学习研究，请勿用于非法用途！</string>
+    <string name="app_service_tips">随便走服务运行中</string>
+    <string name="app_agreement">服务条款</string>
+    <string name="app_agreement_content">"欢迎使用随便走。仔细看，莫违法哦。\n\n"
+    
+    "一、服务说明\n"
+    "随便走是一款位置信息的工具类应用，为用户提供便捷的位置记录与模拟服务。\n\n"
+    
+    "二、隐私保护\n"
+    "我们高度重视您的隐私。随便走不会收集、存储或上传您的任何个人信息、位置数据、设备信息至任何远程服务器。所有数据均存储在您的设备本地，您可以随时清除。\n\n"
+    
+    "三、使用规范\n"
+    "1. 您承诺仅将本软件用于合法目的。严禁利用本软件从事任何违法违规活动，包括但不限于：侵犯他人隐私、进行欺诈行为、干扰其他应用的正常运行。\n"
+    "2. 您不得对本软件进行反向工程、反编译、反汇编或以其他方式试图获取源代码。\n\n"
+    
+    "四、免责声明\n"
+    "1. 本软件按"原样"提供，不提供任何明示或暗示的保证。\n"
+    "2. 您理解并同意，使用本软件的风险由您自行承担。对于因使用或无法使用本软件而导致的任何直接或间接损失，开发者不承担任何责任。\n"
+    "3. 本软件功能可能因设备差异、系统版本等因素存在差异，开发者不保证所有功能在所有设备上均能正常运行。\n\n"
+    
+    "五、条款变更\n"
+    "我们保留随时修改本条款的权利。修改后的条款将在应用内公布，继续使用即视为接受修改后的条款。\n\n"
+    
+    "六、联系方式\n"
+    "如对本条款有任何疑问，请通过应用内提供的联系方式与我们取得联系。\n\n"
+    
+    "如您不同意以上任一条款，就卸载随便走吧。"
+    </string>
+    <string name="app_agreement_privacy">已阅读并同意《服务条款》</string>
+    <string name="app_error_agreement">请先阅读并同意《服务条款》</string>
+    <string name="app_error_read">请先阅读并接受《服务条款》</string>
+    <string name="app_error_gps">定位不可用，请检查 GPS 是否开启</string>
+    <string name="app_error_network">网络不可用，请检查网络连接</string>
+    <string name="app_error_permission">权限不足，请授予相关权限</string>
+    <string name="app_error_input">输入有误，请检查输入是否合法</string>
+    <string name="app_error_input_null">输入不能为空，请重新输入内容</string>
+    <string name="app_error_search">查找失败，请检查网络或定位</string>
+    <string name="app_error_location">请先选择位置</string>
+    <string name="app_error_dev">开发者模式未开启，无法跳转！请自行搜索开启方法</string>
+    <string name="app_error_param">非法参数</string>
+    <string name="app_error_protocol">请先阅读并接收用户协议</string>
+    <string name="app_error_username">用户名不合法</string>
+    <string name="app_error_code">注册码不能为空</string>
+    <string name="app_error_longitude">经度超出限制!\n取值：-180.0 ~ 180.0</string>
+    <string name="app_error_latitude">纬度超出限制!\n取值：-90.0 ~ 90.0</string>
+    <string name="app_search_null">没有匹配结果，请重新搜索</string>
+    <string name="app_search_tips">请输入查找内容</string>
+    <string name="app_location_ok">位置已传送</string>
+    <string name="app_location_copy">位置已复制到剪切板</string>
+    <string name="app_location_save">位置已保存</string>
+
+    <!-- 欢迎页 -->
+    <string name="welcome_btn_txt">开始随便走</string>
+    <string name="app_btn_agree">同意</string>
+    <string name="app_btn_disagree">拒绝</string>
+
+    <!-- 移动相关参数 -->
+    <string name="setting_group_move">移动</string>
+    <string name="setting_joystick_type">摇杆类型</string>
+    <string name="setting_walk">步行速度(米/秒)</string>
+    <string name="setting_walk_default">1.2</string>
+    <string name="setting_run">跑步速度(米/秒)</string>
+    <string name="setting_run_default">3.6</string>
+    <string name="setting_bike">驾驶速度(米/秒)</string>
+    <string name="setting_bike_default">10.0</string>
+    <string name="setting_altitude">海拔高度(米)</string>
+    <string name="setting_altitude_default">55.0</string>
+
+    <!-- 位置偏移相关参数 -->
+    <string name="setting_group_location_offset">位置偏移</string>
+    <string name="setting_random_offset">随机偏移</string>
+    <string name="setting_random_offset_summary">仅在使用历史位置时生效</string>
+    <string name="setting_random_offset_default">10.0</string>
+    <string name="setting_lat_max_offset">经度最大偏移距离(米)</string>
+    <string name="setting_lon_max_offset">纬度最大偏移距离(米)</string>
+    <!-- 记录相关参数 -->
+    <string name="setting_group_log">记录</string>
+    <string name="setting_log_off">关闭日志</string>
+    <string name="setting_history_expiration">历史记录有效期(天)</string>
+    <!-- 关于相关参数 -->
+    <string name="setting_group_about">关于</string>
+    <string name="setting_version">版本号</string>
+    <string name="setting_author">开发者</string>
+
+    <!-- 历史记录页面 -->
+    <string name="history_expiration">7</string>
+    <string name="history_location_default_name">地图位置</string>
+    <string name="history_idle">暂无历史记录</string>
+    <string name="history_delete_ok">删除成功！</string>
+    <string name="history_delete_error">删除记录失败</string>
+    <string name="history_error_location">定位失败，请手动选取定位点</string>
+    <string name="history_error_search">未搜索到指定内容</string>
+
+    <!-- 通知栏 -->
+    <string name="note_show">显示摇杆</string>
+    <string name="note_hide">隐藏摇杆</string>
+    <!-- 摇杆 -->
+    <string name="joystick_map_tips">搜索或点击地图位置</string>
+    <string name="joystick_history_tips">搜索或点击历史位置</string>
+    <string name="joystick_history">历史记录</string>
+    <string name="joystick_map">地图</string>
+    <string name="joystick_move">移动</string>
+    <string name="joystick_walk">步行</string>
+    <string name="joystick_run">跑步</string>
+    <string name="joystick_bike">自行车</string>
+    <string name="joystick_auto">自动路线</string>
+    <string name="joystick_route_add">添加途经点</string>
+    <string name="joystick_route_play">开始移动</string>
+    <string name="joystick_route_stop">停止移动</string>
+    <string name="joystick_route_clear">清空路线</string>
+    <string name="joystick_route_tips">点击地图添加途经点</string>
+    <!-- 导航页 -->
+    <string name="nav_drawer_open">打开导航菜单</string>
+    <string name="nav_drawer_close">关闭导航菜单</string>
+    <string name="nav_menu_history">历史记录</string>
+    <string name="nav_menu_settings">设置</string>
+    <string name="nav_menu_dev">开发人员选项</string>
+    <string name="nav_menu_more">更多</string>
+    <string name="nav_menu_upgrade">检测更新</string>
+    <string name="nav_menu_feedback">问题反馈</string>
+    <string name="nav_menu_contact">联系作者</string>
+    <string name="nav_app_tips">仅供学习使用，否则后果自负!</string>
+
+    <!-- 主界面 -->
+    <string name="label_longitude">经度</string>
+    <string name="label_latitude">纬度</string>
+    <string name="input_position_ok">传送</string>
+    <string name="input_position_cancel">取消</string>
+    <string name="input_position_baidu">BD09 坐标系</string>
+    <string name="input_position_gps">GPS 坐标系</string>
+    <string name="input_button">输入位置</string>
+    <string name="cur_position">返回当前位置</string>
+    <string name="zoom_in">放大</string>
+    <string name="zoom_out">缩小</string>
+
+    <!-- 百度地图 -->
+    <string name="map_pic_sate">卫星图</string>
+    <string name="map_pic_normal">普通图</string>
+
+    <!-- 更新 -->
+    <string name="update_title">新版本可用</string>
+    <string name="update_downloading">升级文件下载中。。。</string>
+    <string name="update_last">恭喜，随便走已是最新版</string>
+    <string name="update_download">立即下载</string>
+    <string name="update_ignore">忽略一次</string>
+    <string name="update_time">更新时间：</string>
+    <string name="update_commit">提交信息：</string>
+</resources>
