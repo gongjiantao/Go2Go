@@ -696,8 +696,11 @@ public class HomeAct extends BaseAct implements SensorEventListener {
     }
 
     private void autoResetMap() {
-        if (bm == null) return;
+        if (bm == null || mv == null) return;
         bm.clear();
+        mv.onPause();
+        mv.onResume();
+        bm = mv.getMap();
         bm.setMyLocationEnabled(true);
         if (clt == 0.0 && cln == 0.0) return;
         MyLocationData locData = new MyLocationData.Builder()
@@ -724,12 +727,12 @@ public class HomeAct extends BaseAct implements SensorEventListener {
 
     public void exitAutoMode() {
         autoMode = false;
-        clearRoute();
         routeBar.setVisibility(View.GONE);
         routeTips.setVisibility(View.GONE);
         if (btnAutoMode != null) {
             btnAutoMode.setColorFilter(getResources().getColor(R.color.gray, getTheme()));
         }
+        clearRoute();
     }
 
     public boolean isAutoMode() {
