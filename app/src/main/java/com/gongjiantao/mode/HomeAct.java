@@ -691,13 +691,13 @@ public class HomeAct extends BaseAct implements SensorEventListener {
         autoHandler.removeCallbacks(autoRunner);
         routePlay.setImageResource(R.drawable.ic_play);
         routePoints.clear();
-        bm.clear();
         routeCount.setText("0 个途经点");
-        autoHandler.postDelayed(this::autoResetMap, 300);
+        autoHandler.post(this::autoResetMap);
     }
 
     private void autoResetMap() {
         if (bm == null) return;
+        bm.clear();
         if (clt == 0.0 && cln == 0.0) return;
         MyLocationData locData = new MyLocationData.Builder()
                 .latitude(clt)
