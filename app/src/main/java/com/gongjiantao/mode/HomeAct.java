@@ -671,7 +671,6 @@ public class HomeAct extends BaseAct implements SensorEventListener {
     private void redrawRoute() {
         if (bm == null) return;
         bm.clear();
-        bm.setMyLocationEnabled(true);
         if (routePoints.isEmpty()) return;
 
         List<LatLng> pts = new ArrayList<>(routePoints);
@@ -819,7 +818,6 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             double[] wgs = GeoUtil.bd2wgs(target.longitude, target.latitude);
             if (bm != null) {
                 bm.clear();
-                bm.setMyLocationEnabled(true);
                 redrawRouteRemaining();
                 bm.animateMapStatus(MapStatusUpdateFactory.newLatLng(target));
             }
