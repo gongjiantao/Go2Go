@@ -656,7 +656,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
                 autoHandler.removeCallbacks(autoRunner);
                 routePlay.setImageResource(R.drawable.ic_play);
                 routeTips.setText("已暂停 | 点击地图继续添加途经点");
-                routeTips.setBackgroundColor(0xCCFF80AB);
+                routeTips.setBackgroundColor(0xCCFFD54F);
             }
         });
         findViewById(R.id.route_clear).setOnClickListener(v -> exitAutoMode());
@@ -675,7 +675,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
 
         List<LatLng> pts = new ArrayList<>(routePoints);
         if (pts.size() >= 2) {
-            bm.addOverlay(new PolylineOptions().width(8).color(0xCCFF80AB).points(pts));
+            bm.addOverlay(new PolylineOptions().width(8).color(0xCCFFB300).points(pts));
         }
         for (int i = 0; i < pts.size(); i++) {
             LatLng pt = pts.get(i);
@@ -719,7 +719,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
         routeBar.setVisibility(View.VISIBLE);
         routeTips.setVisibility(View.VISIBLE);
         routeTips.setText("点击地图添加途经点");
-        routeTips.setBackgroundColor(0xCCFF80AB);
+        routeTips.setBackgroundColor(0xCC81C784);
         if (btnAutoMode != null) {
             btnAutoMode.setColorFilter(getResources().getColor(R.color.colorAccent, getTheme()));
         }
@@ -745,7 +745,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
         routePlay.setImageResource(R.drawable.ic_stop);
         routeTips.setVisibility(View.VISIBLE);
         updateLoopTips();
-        routeTips.setBackgroundColor(0xBBD81B60);
+        routeTips.setBackgroundColor(0xCCFFB300);
         if (!routePoints.isEmpty() && svc != null) {
             LatLng first = routePoints.get(0);
             mkPt = first;
@@ -765,7 +765,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
                     if (loopRemaining > 0) {
                         routeIndex = 0;
                         updateLoopTips();
-                        routeTips.setBackgroundColor(0xBBD81B60);
+                        routeTips.setBackgroundColor(0xCCFFB300);
                         if (!routePoints.isEmpty()) {
                             LatLng first = routePoints.get(0);
                             mkPt = first;
@@ -780,7 +780,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
                         routeCount.setText("0 个途经点");
                         routePlay.setImageResource(R.drawable.ic_play);
                         routeTips.setText("路线终点已到达");
-                        routeTips.setBackgroundColor(0xCCFF80AB);
+                        routeTips.setBackgroundColor(0xCCFF6D5A);
                         autoHandler.postDelayed(() -> autoResetMap(), 1000);
                         return;
                     }
@@ -847,7 +847,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
         List<LatLng> pts = new ArrayList<>();
         for (int i = routeIndex; i < routePoints.size(); i++) pts.add(routePoints.get(i));
         if (pts.size() >= 2) {
-            bm.addOverlay(new PolylineOptions().width(8).color(0xCCFF80AB).points(pts));
+            bm.addOverlay(new PolylineOptions().width(8).color(0xCCFFB300).points(pts));
         }
         for (int i = routeIndex; i < routePoints.size(); i++) {
             bm.addOverlay(new MarkerOptions().position(routePoints.get(i)).icon(gPin).title(String.valueOf(i + 1)));

@@ -16,7 +16,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="RippleWhite" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:colorControlHighlight">#FFF8BBD0</item>
+        <item name="android:colorControlHighlight">#33FFB300</item>
     </style>
 
     <style name="DialogAnimFadeInFadeOut" parent="android:Animation">
@@ -46,6 +46,17 @@
         <item name="android:background">@drawable/bg_button_outline</item>
         <item name="android:layout_marginTop">4dp</item>
         <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="ChipStyle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:background">@drawable/bg_chip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
     </style>
 
 </resources>
