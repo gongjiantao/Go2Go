@@ -693,7 +693,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
         routePoints.clear();
         bm.clear();
         routeCount.setText("0 个途经点");
-        autoResetMap();
+        autoHandler.postDelayed(this::autoResetMap, 300);
     }
 
     private void autoResetMap() {
