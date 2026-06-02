@@ -698,7 +698,12 @@ public class HomeAct extends BaseAct implements SensorEventListener {
 
     private void autoResetMap() {
         if (bm == null) return;
-        bm.setMyLocationEnabled(true);
+        MyLocationData locData = new MyLocationData.Builder()
+                .latitude(clt)
+                .longitude(cln)
+                .direction(cdir)
+                .build();
+        bm.setMyLocationData(locData);
         MapStatus.Builder builder = new MapStatus.Builder();
         builder.target(new LatLng(clt, cln)).zoom(18.0f);
         bm.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
