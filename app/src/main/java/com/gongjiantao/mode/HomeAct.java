@@ -698,6 +698,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
     private void autoResetMap() {
         if (bm == null) return;
         bm.clear();
+        bm.setMyLocationEnabled(true);
         if (clt == 0.0 && cln == 0.0) return;
         MyLocationData locData = new MyLocationData.Builder()
                 .latitude(clt)
