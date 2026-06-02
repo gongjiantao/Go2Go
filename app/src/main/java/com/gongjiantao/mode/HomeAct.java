@@ -698,6 +698,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
 
     private void autoResetMap() {
         if (bm == null) return;
+        if (clt == 0.0 && cln == 0.0) return;
         MyLocationData locData = new MyLocationData.Builder()
                 .latitude(clt)
                 .longitude(cln)
@@ -857,37 +858,42 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             lc.registerLocationListener(new BDAbstractLocationListener() {
                 @Override
                 public void onReceiveLocation(BDLocation bdLocation) {
-                    if (bdLocation == null || mv == null) {// mapview 销毁后不在处理新接收的位置
+                    if (bdLocation == null || mv == null) {
+                        return;
+                    }
+
+                    int err = bdLocation.getLocType();
+                    if (err == 62 || err == 63) {
+                        lc.requestLocation();
+                        return;
+                    }
+
+                    double lat = bdLocation.getLatitude();
+                    double lng = bdLocation.getLongitude();
+                    if (lat == 0.0 && lng == 0.0) {
                         return;
                     }
 
                     curCity = bdLocation.getCity();
-                    clt = bdLocation.getLatitude();
-                    cln = bdLocation.getLongitude();
+                    clt = lat;
+                    cln = lng;
                     MyLocationData locData = new MyLocationData.Builder()
                             .accuracy(bdLocation.getRadius())
-                            .direction(cdir)// 此处设置开发者获取到的方向信息，顺时针0-360
-                            .latitude(bdLocation.getLatitude())
-                            .longitude(bdLocation.getLongitude()).build();
+                            .direction(cdir)
+                            .latitude(lat)
+                            .longitude(lng).build();
                     bm.setMyLocationData(locData);
                     MyLocationConfiguration configuration = new MyLocationConfiguration(MyLocationConfiguration.LocationMode.NORMAL, true, null);
                     bm.setMyLocationConfiguration(configuration);
 
-                    /* 如果出现错误，则需要重新请求位置 */
-                    int err = bdLocation.getLocType();
-                    if (err == BDLocation.TypeCriteriaException || err == BDLocation.TypeNetWorkException) {
-                        lc.requestLocation();   /* 请求位置 */
-                    } else {
-                        if (fstLoc) {
-                            fstLoc = false;
-                            // 这里记录百度地图返回的位置
-                            mkPt = new LatLng(bdLocation.getLatitude(), bdLocation.getLongitude());
-                            MapStatus.Builder builder = new MapStatus.Builder();
-                            builder.target(mkPt).zoom(18.0f);
-                            bm.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
+                    if (fstLoc) {
+                        fstLoc = false;
+                        mkPt = new LatLng(lat, lng);
+                        MapStatus.Builder builder = new MapStatus.Builder();
+                        builder.target(mkPt).zoom(18.0f);
+                        bm.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
 
-                            XLog.i("First Baidu LatLng: " + mkPt);
-                        }
+                        XLog.i("First Baidu LatLng: " + mkPt);
                     }
                 }
                 /**
