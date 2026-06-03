@@ -26,6 +26,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.preference.PreferenceManager;
 
+import android.animation.ValueAnimator;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.OvershootInterpolator;
+import android.widget.ImageView;
+
 import com.gongjiantao.mode.utils.SysUtil;
 
 import java.util.ArrayList;
@@ -52,6 +57,70 @@ public class StartAct extends AppCompatActivity {
         startBtn.setOnClickListener(v -> goHome());
 
         chkAgreement();
+        runEntranceAnimation();
+        startBgBreath();
+    }
+
+    private void startBgBreath() {
+        View bg = findViewById(R.id.welcome_bg);
+        ValueAnimator breath = ValueAnimator.ofFloat(1f, 1.04f, 1f);
+        breath.setDuration(4000);
+        breath.setRepeatCount(ValueAnimator.INFINITE);
+        breath.setRepeatMode(ValueAnimator.RESTART);
+        breath.setInterpolator(new DecelerateInterpolator(1.5f));
+        breath.addUpdateListener(a ->
+                bg.setScaleX((float) a.getAnimatedValue()));
+        breath.start();
+    }
+
+    private void runEntranceAnimation() {
+        ImageView logo = findViewById(R.id.welcome_logo);
+        TextView title = findViewById(R.id.welcome_title);
+        TextView subtitle = findViewById(R.id.welcome_subtitle);
+        Button btn = findViewById(R.id.startButton);
+
+        OvershootInterpolator overshoot = new OvershootInterpolator(0.8f);
+        DecelerateInterpolator decel = new DecelerateInterpolator(1.4f);
+
+        // Logo: scale + fade
+        logo.animate()
+                .alpha(1).scaleX(1).scaleY(1)
+                .setDuration(700)
+                .setInterpolator(overshoot)
+                .setStartDelay(80)
+                .start();
+
+        // Title: slide up + fade
+        title.animate()
+                .alpha(1).translationY(0)
+                .setDuration(600)
+                .setInterpolator(decel)
+                .setStartDelay(250)
+                .start();
+
+        // Subtitle: fade in
+        subtitle.animate()
+                .alpha(1).translationY(0)
+                .setDuration(500)
+                .setInterpolator(decel)
+                .setStartDelay(420)
+                .start();
+
+        // Button: scale + fade + subtle elevation bounce
+        btn.animate()
+                .alpha(1).scaleX(1).scaleY(1)
+                .setDuration(550)
+                .setInterpolator(overshoot)
+                .setStartDelay(580)
+                .withEndAction(() -> {
+                    ValueAnimator elevAnim = ValueAnimator.ofFloat(0, 8);
+                    elevAnim.setDuration(400);
+                    elevAnim.setInterpolator(new OvershootInterpolator(0.5f));
+                    elevAnim.addUpdateListener(a ->
+                            btn.setElevation((float) a.getAnimatedValue()));
+                    elevAnim.start();
+                })
+                .start();
     }
 
     @Override

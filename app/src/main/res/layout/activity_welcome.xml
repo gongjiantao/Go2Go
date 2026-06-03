@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
 
     <View
+        android:id="@+id/welcome_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_welcome_gradient" />
@@ -13,8 +14,8 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingLeft="36dp"
-        android:paddingRight="36dp">
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp">
 
         <View
             android:layout_width="0dp"
@@ -22,31 +23,42 @@
             android:layout_weight="1" />
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/welcome_logo"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
             android:src="@drawable/ic_launcher_foreground"
             android:contentDescription="@null"
             android:tint="@color/white"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="24dp"
+            android:alpha="0"
+            android:scaleX="0.3"
+            android:scaleY="0.3" />
 
         <TextView
+            android:id="@+id/welcome_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welcome_title"
             android:textColor="@color/white"
-            android:textSize="32sp"
+            android:textSize="34sp"
             android:textStyle="bold"
-            android:letterSpacing="0.15"
-            android:layout_marginBottom="8dp" />
+            android:letterSpacing="0.12"
+            android:layout_marginBottom="6dp"
+            android:alpha="0"
+            android:translationY="30dp" />
 
         <TextView
+            android:id="@+id/welcome_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welcome_subtitle"
-            android:textColor="#CCFFFFFF"
+            android:textColor="#BFFFFFFF"
             android:textSize="13sp"
-            android:layout_marginBottom="48dp"
-            android:gravity="center" />
+            android:letterSpacing="0.06"
+            android:layout_marginBottom="56dp"
+            android:gravity="center"
+            android:alpha="0"
+            android:translationY="20dp" />
 
         <Button
             android:id="@+id/startButton"
@@ -56,25 +68,18 @@
             android:textSize="17sp"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
+            android:letterSpacing="0.04"
             android:background="@drawable/bg_button_white"
-            android:layout_marginBottom="16dp" />
-
-        <CheckBox
-            android:id="@+id/check_agreement"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:clickable="false"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:textColor="#AAFFFFFF"
-            android:buttonTint="#AAFFFFFF"
-            android:text="@string/app_agreement_privacy"
-            android:layout_marginBottom="32dp" />
+            android:stateListAnimator="@null"
+            android:elevation="0dp"
+            android:layout_marginBottom="48dp"
+            android:alpha="0"
+            android:scaleX="0.85"
+            android:scaleY="0.85" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="0.6" />
+            android:layout_weight="0.25" />
     </LinearLayout>
 </merge>
