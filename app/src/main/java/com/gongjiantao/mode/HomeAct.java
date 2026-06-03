@@ -460,7 +460,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
                 File file = new File(getExternalFilesDir("Logs"), AppCore.LOG_FILE_NAME);
                 SndUtil.sendFile(this, file, item.getTitle().toString());
             } else if (id == R.id.nav_contact) {
-                Uri uri = Uri.parse("https://gitee.com/itexp/gogogo/issues");
+                Uri uri = Uri.parse("https://github.com/gongjiantao/Map_mode");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
