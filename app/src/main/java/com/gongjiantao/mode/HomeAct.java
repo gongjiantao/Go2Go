@@ -1028,18 +1028,23 @@ public class HomeAct extends BaseAct implements SensorEventListener {
     }
 
     private void rstMap() {
-        bm.clear();
+        if (bm == null) return;
         mkPt = null;
-
-        MyLocationData locData = new MyLocationData.Builder()
-                .latitude(clt)
-                .longitude(cln)
-                .direction(cdir)
-                .build();
-        bm.setMyLocationData(locData);
-
+        LatLng target;
+        if (clt == 0.0 && cln == 0.0) {
+            target = new LatLng(36.547743718042415, 117.07018449827267);
+            SysUtil.toast(this, "请先启动定位服务");
+        } else {
+            target = new LatLng(clt, cln);
+            MyLocationData locData = new MyLocationData.Builder()
+                    .latitude(clt)
+                    .longitude(cln)
+                    .direction(cdir)
+                    .build();
+            bm.setMyLocationData(locData);
+        }
         MapStatus.Builder builder = new MapStatus.Builder();
-        builder.target(new LatLng(clt, cln)).zoom(18.0f);
+        builder.target(target).zoom(18.0f);
         bm.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
     }
 
