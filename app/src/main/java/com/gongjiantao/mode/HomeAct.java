@@ -693,26 +693,9 @@ public class HomeAct extends BaseAct implements SensorEventListener {
         routePlay.setImageResource(R.drawable.ic_play);
         routePoints.clear();
         routeCount.setText("0 个途经点");
-        autoHandler.post(this::autoResetMap);
-    }
-
-    private void autoResetMap() {
-        if (bm == null || mv == null) return;
-        bm.clear();
-        mv.onPause();
-        mv.onResume();
-        bm = mv.getMap();
-        bm.setMyLocationEnabled(true);
-        if (clt == 0.0 && cln == 0.0) return;
-        MyLocationData locData = new MyLocationData.Builder()
-                .latitude(clt)
-                .longitude(cln)
-                .direction(cdir)
-                .build();
-        bm.setMyLocationData(locData);
-        MapStatus.Builder builder = new MapStatus.Builder();
-        builder.target(new LatLng(clt, cln)).zoom(18.0f);
-        bm.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
+        if (bm != null) {
+            bm.clear();
+        }
     }
 
     public void enterAutoMode() {
@@ -734,6 +717,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             btnAutoMode.setColorFilter(getResources().getColor(R.color.gray, getTheme()));
         }
         clearRoute();
+        SysUtil.toast(this, "如地图位置异常，请点击定位按钮或双指缩放回到中国区域");
     }
 
     public boolean isAutoMode() {
@@ -786,7 +770,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
                         routePlay.setImageResource(R.drawable.ic_play);
                         routeTips.setText("路线终点已到达");
                         routeTips.setBackgroundColor(0xCCFF6D5A);
-                        autoHandler.postDelayed(() -> autoResetMap(), 1000);
+                        if (bm != null) bm.clear();
                         return;
                     }
                 }
