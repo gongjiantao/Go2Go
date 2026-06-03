@@ -686,6 +686,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
 
     private void clearRoute() {
         routeRunning = false;
+        routeIndex = 0;
         loopRemaining = 0;
         loopTotal = 0;
         autoHandler.removeCallbacks(autoRunner);
@@ -740,17 +741,21 @@ public class HomeAct extends BaseAct implements SensorEventListener {
     }
 
     private void startAutoRoute() {
-        routeIndex = 0;
         routeRunning = true;
         routePlay.setImageResource(R.drawable.ic_stop);
         routeTips.setVisibility(View.VISIBLE);
         updateLoopTips();
         routeTips.setBackgroundColor(0xCCFFB300);
         if (!routePoints.isEmpty() && svc != null) {
-            LatLng first = routePoints.get(0);
-            mkPt = first;
-            double[] wgs = GeoUtil.bd2wgs(first.longitude, first.latitude);
-            svc.setPosition(wgs[0], wgs[1], 0);
+            if (routeIndex >= routePoints.size()) {
+                routeIndex = 0;
+            }
+            if (routeIndex == 0) {
+                LatLng first = routePoints.get(0);
+                mkPt = first;
+                double[] wgs = GeoUtil.bd2wgs(first.longitude, first.latitude);
+                svc.setPosition(wgs[0], wgs[1], 0);
+            }
         }
         autoRunner = new Runnable() {
             @Override
