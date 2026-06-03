@@ -707,7 +707,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
         routePlay.setImageResource(R.drawable.ic_play);
         routePoints.clear();
         routeCount.setText("0 个途经点");
-        // 不操作地图，避免部分设备 bm.clear() 导致渲染闪到 0,0
+        if (bm != null) bm.clear();
     }
 
     public void enterAutoMode() {
@@ -729,7 +729,6 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             btnAutoMode.setColorFilter(getResources().getColor(R.color.gray, getTheme()));
         }
         clearRoute();
-        SysUtil.toast(this, "如地图位置异常，请点击定位按钮或双指缩放回到中国区域");
     }
 
     public boolean isAutoMode() {
