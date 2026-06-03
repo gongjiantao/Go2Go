@@ -49,4 +49,10 @@
         <item name="android:background">@drawable/bg_button_outline</item>
     </style>
 
+    <style name="NavItemText" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/textPrimary</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
 </resources>
