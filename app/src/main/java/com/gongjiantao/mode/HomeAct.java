@@ -457,8 +457,22 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             } else if (id == R.id.nav_update) {
                 chkUpd(true);
             } else if (id == R.id.nav_feedback) {
-                File file = new File(getExternalFilesDir("Logs"), AppCore.LOG_FILE_NAME);
-                SndUtil.sendFile(this, file, item.getTitle().toString());
+                ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData mClipData = ClipData.newPlainText("WeChatID", "G46645426826");
+                if (cm != null) {
+                    cm.setPrimaryClip(mClipData);
+                    SysUtil.toast(this, "微信号已复制，请在微信中搜索添加");
+                    try {
+                        Intent intent = getPackageManager().getLaunchIntentForPackage("com.tencent.mm");
+                        if (intent != null) {
+                            startActivity(intent);
+                        } else {
+                            SysUtil.toast(this, "未安装微信");
+                        }
+                    } catch (Exception e) {
+                        SysUtil.toast(this, "无法打开微信");
+                    }
+                }
             } else if (id == R.id.nav_contact) {
                 Uri uri = Uri.parse("https://github.com/gongjiantao/Map_mode");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
