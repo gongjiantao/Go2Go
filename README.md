@@ -146,22 +146,17 @@ Run
 
 ## 项目截图
 
-后续可以在这里补充应用截图，例如：
+| 欢迎页 | 主地图 | 路线模拟 |
+| :---: | :---: | :---: |
+| ![欢迎页](docs/images/home.png) | ![主地图](docs/images/map.png) | ![路线模拟](docs/images/route.png) |
 
-```text
-docs/images/home.png
-docs/images/map.png
-docs/images/route.png
-```
+| 搜索历史 | 摇杆控制 | 定位服务 |
+| :---: | :---: | :---: |
+| ![搜索历史](docs/images/search_history.jpg) | ![摇杆控制](docs/images/joystick.jpg) | ![定位服务](docs/images/gps.png) |
 
-建议截图包括：
-
-* 欢迎页
-* 主地图界面
-* 搜索地点界面
-* 自动路线模式
-* 悬浮摇杆效果
-* 足迹记录页面
+| 定位选项 | 应用图标 |
+| :---: | :---: |
+| ![定位选项](docs/images/passive.png) | ![应用图标](docs/images/LOGO.png) |
 
 ## 注意事项
 
