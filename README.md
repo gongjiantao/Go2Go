@@ -1,10 +1,10 @@
-# 随便走 (Go2Go) 🌍
+# Go2Go 🌍
 
 [![Android Version](https://img.shields.io/badge/Android-7.0%2B-green.svg)](https://developer.android.com)
-[![Version](https://img.shields.io/badge/Version-1.0.1-blue.svg)](https://github.com/gongjiantao/Map_mode/releases)
+[![Version](https://img.shields.io/badge/Version-1.0.1-blue.svg)](https://github.com/gongjiantao/Go2Go/releases)
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 
-**随便走 (Map_mode)** 是一款基于百度地图 SDK 开发的 Android 位置模拟与足迹记录工具。它不仅支持实时位置模拟，还提供了自动路径规划、摇杆控制等高级功能，旨在为开发者调试、位置研究提供丝滑且高效的体验。
+**Go2Go** 是一款基于百度地图 SDK 开发的 Android 位置模拟与足迹记录工具。它不仅支持实时位置模拟，还提供了自动路径规划、摇杆控制等高级功能，旨在为开发者调试、位置研究提供丝滑且高效的体验。
 
 ---
 
@@ -35,12 +35,12 @@
 
 ### 环境要求
 - Android 7.0 (API Level 24) 及以上。
-- 开启系统的 **"开发者选项"** -> **"选择模拟位置信息应用"**，并选择 **"随便走"**。
+- 开启系统的 **"开发者选项"** -> **"选择模拟位置信息应用"**，并选择 **"Go2Go"**。
 
 ### 安装与运行
 1. **克隆仓库**：
    ```bash
-   git clone https://github.com/gongjiantao/Map_mode.git
+   git clone https://github.com/gongjiantao/Go2Go.git
    ```
 2. **配置百度地图 AK**：
    - 前往 [百度地图开放平台](https://lbsyun.baidu.com/) 申请 Android SDK 密钥。
@@ -72,10 +72,10 @@
 
 ## 🤝 贡献与反馈
 
-如果您发现了 Bug 或有更好的功能建议，欢迎提交 [Issue](https://github.com/gongjiantao/Map_mode/issues) 或 Pull Request。
+如果您发现了 Bug 或有更好的功能建议，欢迎提交 [Issue](https://github.com/gongjiantao/Go2Go/issues) 或 Pull Request。
 
 - **联系作者**：微信搜索 `G46645426826` (点击应用内反馈可自动复制)
-- **项目地址**：[https://github.com/gongjiantao/Map_mode](https://github.com/gongjiantao/Map_mode)
+- **项目地址**：[https://github.com/gongjiantao/Go2Go](https://github.com/gongjiantao/Go2Go)
 
 ---
 

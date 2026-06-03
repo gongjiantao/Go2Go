@@ -467,14 +467,14 @@ public class HomeAct extends BaseAct implements SensorEventListener {
                         if (intent != null) {
                             startActivity(intent);
                         } else {
-                            SysUtil.toast(this, "未安装微信");
+                            SysUtil.toast(this, "");
                         }
                     } catch (Exception e) {
                         SysUtil.toast(this, "无法打开微信");
                     }
                 }
             } else if (id == R.id.nav_contact) {
-                Uri uri = Uri.parse("https://github.com/gongjiantao/Map_mode");
+                Uri uri = Uri.parse("https://github.com/gongjiantao/Go2Go");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
