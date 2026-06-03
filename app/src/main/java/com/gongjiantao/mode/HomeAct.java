@@ -306,13 +306,13 @@ public class HomeAct extends BaseAct implements SensorEventListener {
         si.setOnActionExpandListener(new  MenuItem.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                sly.setVisibility(View.INVISIBLE);
-                hly.setVisibility(View.INVISIBLE);
+                sly.setVisibility(View.GONE);
+                hly.setVisibility(View.GONE);
                 return true;  // Return true to collapse action view
             }
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
-                sly.setVisibility(View.INVISIBLE);
+                hly.setVisibility(View.GONE);
                 //展示搜索历史
                 List<Map<String, Object>> data = getHist();
 
@@ -363,7 +363,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
 
                     SrchDB.save(dbSrch, contentValues);
                     bm.clear();
-                    sly.setVisibility(View.INVISIBLE);
+                    sly.setVisibility(View.GONE);
                 } catch (Exception e) {
                     SysUtil.toast(HomeAct.this, getResources().getString(R.string.app_error_search));
                     XLog.d(getResources().getString(R.string.app_error_search));
@@ -376,7 +376,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             public boolean onQueryTextChange(String newText) {
                 //当输入框内容改变的时候回调
                 //搜索历史置为不可见
-                hly.setVisibility(View.INVISIBLE);
+                hly.setVisibility(View.GONE);
 
                 if (newText != null && !newText.isEmpty()) {
                     try {
@@ -400,7 +400,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             EditText et = findViewById(androidx.appcompat.R.id.search_src_text);
             et.setText("");
             sv.setQuery("", false);
-            sly.setVisibility(View.INVISIBLE);
+            sly.setVisibility(View.GONE);
             hly.setVisibility(View.VISIBLE);
         });
 
@@ -1317,7 +1317,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             contentValues.put(SrchDB.COL_TS, System.currentTimeMillis() / 1000);
 
             SrchDB.save(dbSrch, contentValues);
-            sly.setVisibility(View.INVISIBLE);
+            sly.setVisibility(View.GONE);
             si.collapseActionView();
         });
         //搜索历史列表的点击监听
@@ -1341,7 +1341,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
                 double[] latLng = GeoUtil.bd2wgs(mkPt.longitude, mkPt.latitude);
 
                 //设置列表不可见
-                hly.setVisibility(View.INVISIBLE);
+                hly.setVisibility(View.GONE);
                 si.collapseActionView();
                 //更新表
                 ContentValues contentValues = new ContentValues();
