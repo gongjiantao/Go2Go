@@ -1,62 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_rounded"
+    android:orientation="vertical"
+    android:minWidth="320dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="18dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.05"
+        android:paddingBottom="16dp" />
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrimary" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:fadeScrollbars="false">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="6dp"
+            android:textColor="@color/textPrimary"
+            android:textSize="13sp" />
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:orientation="vertical"
+        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:background="@drawable/border_gray"
-        android:padding="16dp">
+        android:orientation="horizontal">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp">
-
-            <TextView
-                android:id="@+id/dlg_agreement_text"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:textSize="14sp"
-                android:textColor="@color/textPrimary"
-                android:lineSpacingExtra="3dp" />
-        </ScrollView>
-
-        <CheckBox
-            android:id="@+id/dlg_agreement_check"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_agreement_privacy"
-            android:textColor="@color/textSecondary"
-            android:layout_marginBottom="10dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:text="@string/app_btn_disagree" />
 
-            <TextView
-                android:id="@+id/btn_Cancel"
-                style="@style/BtnOutline"
-                android:text="拒绝" />
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="24dp"
+            android:background="@color/divider" />
 
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.12" />
-
-            <TextView
-                android:id="@+id/btn_OK"
-                style="@style/BtnPrimary"
-                android:text="同意" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/btn_agree"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/app_btn_agree" />
     </LinearLayout>
 </LinearLayout>

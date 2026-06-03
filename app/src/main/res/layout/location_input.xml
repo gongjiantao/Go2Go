@@ -1,86 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
-    android:background="@drawable/border_gray">
+    android:orientation="vertical">
 
-    <TextView
+    <EditText
+        android:id="@+id/joystick_longitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:text="输入经纬度"
-        android:textStyle="bold"
-        android:textColor="@color/textPrimary"
-        android:textSize="17sp"
-        android:gravity="start" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints="longitude"
+        android:background="@drawable/bg_button_white"
+        android:hint="@string/label_longitude"
+        android:inputType="numberDecimal"
+        android:digits="-0123456789."
+        android:minHeight="48dp" />
 
-    <TextView
-        android:id="@+id/input_error"
+    <EditText
+        android:id="@+id/joystick_latitude"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/colorPrimary"
-        android:gravity="center"
-        android:visibility="gone" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints="latitude"
+        android:background="@drawable/bg_button_white"
+        android:hint="@string/label_latitude"
+        android:inputType="numberDecimal"
+        android:digits="-0123456789."
+        android:minHeight="48dp" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroupMapType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/pos_type_bd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/input_position_baidu" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/input_position_gps" />
+    </RadioGroup>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_margin="8dp"
         android:orientation="horizontal">
-
-        <AutoCompleteTextView
-            android:id="@+id/latInput"
-            android:layout_width="0dp"
-            android:layout_height="52dp"
-            android:layout_weight="1"
-            android:inputType="numberDecimal"
-            android:hint="纬度 (例: 39.9042)"
-            android:textSize="15sp"
-            android:background="@drawable/bg_button_white"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:layout_marginEnd="10dp"
-            android:dropDownAnchor="@id/latInput"
-            android:completionThreshold="1" />
-
-        <AutoCompleteTextView
-            android:id="@+id/lonInput"
-            android:layout_width="0dp"
-            android:layout_height="52dp"
-            android:layout_weight="1"
-            android:inputType="numberDecimal"
-            android:hint="经度 (例: 116.4074)"
-            android:textSize="15sp"
-            android:background="@drawable/bg_button_white"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:dropDownAnchor="@id/lonInput"
-            android:completionThreshold="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/btn_OK"
-            style="@style/BtnPrimary"
-            android:text="确定" />
 
         <Space
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.12" />
+            android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/btn_Cancel"
-            style="@style/BtnOutline"
-            android:text="取消" />
+        <Button
+            android:id="@+id/input_position_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input_position_cancel"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/input_position_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input_position_ok"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
     </LinearLayout>
 </LinearLayout>
