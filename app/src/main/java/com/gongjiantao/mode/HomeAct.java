@@ -955,9 +955,6 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             }
         });
 
-        ImageButton curPosBtn = this.findViewById(R.id.cur_position);
-        curPosBtn.setOnClickListener(v -> rstMap());
-
         ImageButton zoomInBtn = this.findViewById(R.id.zoom_in);
         zoomInBtn.setOnClickListener(v -> bm.animateMapStatus(MapStatusUpdateFactory.zoomIn()));
 
@@ -1025,27 +1022,6 @@ public class HomeAct extends BaseAct implements SensorEventListener {
             bm.clear();
             bm.addOverlay(ooA);
         }
-    }
-
-    private void rstMap() {
-        if (bm == null) return;
-        mkPt = null;
-        LatLng target;
-        if (clt == 0.0 && cln == 0.0) {
-            target = new LatLng(36.547743718042415, 117.07018449827267);
-            SysUtil.toast(this, "请先启动定位服务");
-        } else {
-            target = new LatLng(clt, cln);
-            MyLocationData locData = new MyLocationData.Builder()
-                    .latitude(clt)
-                    .longitude(cln)
-                    .direction(cdir)
-                    .build();
-            bm.setMyLocationData(locData);
-        }
-        MapStatus.Builder builder = new MapStatus.Builder();
-        builder.target(target).zoom(18.0f);
-        bm.animateMapStatus(MapStatusUpdateFactory.newMapStatus(builder.build()));
     }
 
     // 在地图上显示位置

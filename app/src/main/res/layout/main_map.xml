@@ -77,18 +77,6 @@
             app:tint="@color/colorAccent" />
 
         <ImageButton
-            android:id="@+id/cur_position"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:background="@drawable/bg_round_button"
-            android:contentDescription="@string/cur_position"
-            android:elevation="3dp"
-            app:srcCompat="@drawable/ic_home_position"
-            app:tint="@color/colorAccent" />
-
-        <ImageButton
             android:id="@+id/zoom_in"
             android:layout_width="48dp"
             android:layout_height="48dp"
