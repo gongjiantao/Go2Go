@@ -72,10 +72,21 @@
             android:background="@drawable/bg_button_white"
             android:stateListAnimator="@null"
             android:elevation="0dp"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="32dp"
             android:alpha="0"
             android:scaleX="0.85"
             android:scaleY="0.85" />
+
+        <CheckBox
+            android:id="@+id/check_agreement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_agreement_privacy"
+            android:textColor="#99FFFFFF"
+            android:textSize="12sp"
+            android:buttonTint="#99FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
 
         <View
             android:layout_width="0dp"
