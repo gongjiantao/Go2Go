@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Primary palette -->
     <color name="colorPrimary">#FF6D5A</color>
     <color name="colorPrimaryDark">#E85D4A</color>
     <color name="colorAccent">#FFB300</color>
 
+    <!-- Neutral -->
     <color name="white">#FFFFFF</color>
     <color name="black">#3E2723</color>
-    <color name="gray">#E8E0DB</color>
-    <color name="grey">#E8E0DB</color>
+    <color name="gray">#BCAAA4</color>
+    <color name="grey">#BCAAA4</color>
     <color name="lightgrey">#F5F0ED</color>
     <color name="textPrimary">#4E342E</color>
     <color name="textSecondary">#8D6E63</color>
-    <color name="divider">#DFD6D1</color>
+    <color name="divider">#E0D8D3</color>
     <color name="bgLight">#FFF9F5</color>
 
+    <!-- Surface -->
+    <color name="surface">#FFFFFFFF</color>
+    <color name="surfaceVariant">#FBF7F4</color>
+
+    <!-- Accent colors -->
     <color name="cartoonBlue">#64B5F6</color>
     <color name="cartoonGreen">#81C784</color>
     <color name="cartoonPink">#F48FB1</color>

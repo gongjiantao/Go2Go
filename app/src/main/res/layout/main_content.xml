@@ -40,29 +40,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|start"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="96dp"
         android:contentDescription="@null"
         app:backgroundTint="@color/cartoonGreen"
-        app:elevation="6dp"
-        app:pressedTranslationZ="12dp"
+        app:elevation="8dp"
+        app:pressedTranslationZ="14dp"
         app:srcCompat="@drawable/ic_position" />
 
     <LinearLayout
         android:id="@+id/search_linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="?attr/actionBarSize"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/bg_search_dropdown"
+        android:elevation="6dp"
         android:visibility="gone">
 
         <ListView
             android:id="@+id/search_list_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="6dp"
             android:divider="@color/divider"
             android:dividerHeight="0.5dp" />
     </LinearLayout>
@@ -71,17 +72,18 @@
         android:id="@+id/search_history_linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="?attr/actionBarSize"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/bg_search_dropdown"
+        android:elevation="6dp"
         android:visibility="gone">
 
         <ListView
             android:id="@+id/search_history_list_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="6dp"
             android:divider="@color/divider"
             android:dividerHeight="0.5dp" />
     </LinearLayout>
