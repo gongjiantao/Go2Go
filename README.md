@@ -1,94 +1,213 @@
 # Go2Go 🌍
 
-[![Android Version](https://img.shields.io/badge/Android-7.0%2B-green.svg)](https://developer.android.com)
+[![Android](https://img.shields.io/badge/Android-7.0%2B-green.svg)](https://developer.android.com/)
 [![Version](https://img.shields.io/badge/Version-1.0.1-blue.svg)](https://github.com/gongjiantao/Go2Go/releases)
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 
-**Go2Go** 是一款基于百度地图 SDK 开发的 Android 位置模拟与足迹记录工具。它不仅支持实时位置模拟，还提供了自动路径规划、摇杆控制等高级功能，旨在为开发者调试、位置研究提供丝滑且高效的体验。
+> 一款基于百度地图 SDK 开发的 Android 位置模拟与足迹记录工具，支持地图选点、路线模拟、摇杆控制和历史足迹记录，适用于开发调试、地图功能测试与定位相关学习研究。
 
-> **📦 项目来源**：本项目 fork 自 [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)，在其基础上进行了大量 UI 重构、功能修复及体验优化。感谢原作者的杰出贡献！
+## 项目介绍
+
+**Go2Go** 是一款 Android 模拟定位工具，主要用于帮助开发者、测试人员或学习者在合法场景下进行位置相关功能调试。
+
+在实际开发中，很多 App 都会涉及定位能力，例如地图展示、附近搜索、位置上报、轨迹记录、导航模拟等。如果每次测试都依赖真实移动，不仅效率低，而且不方便复现问题。Go2Go 的作用就是提供一个更直观、更轻量的位置模拟环境，让用户可以通过地图选点、路线规划、摇杆控制等方式完成定位测试。
+
+本项目 fork 自 [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)，并在原项目基础上进行了 UI 重构、功能修复和体验优化。感谢原作者的开源贡献。
+
+## 功能特点
+
+* 📍 **地图选点定位**
+  可在地图上选择任意位置，并将其作为模拟定位点。
+
+* 🔍 **地点搜索**
+  支持通过百度地图搜索地点，快速定位到目标区域。
+
+* 🧭 **自动路线模拟**
+  支持添加多个途经点，按照设定路线进行自动移动模拟。
+
+* 🎮 **悬浮摇杆控制**
+  通过屏幕悬浮摇杆控制移动方向和速度，适合手动微调位置。
+
+* 📜 **足迹记录**
+  自动记录历史模拟位置，方便后续快速查看和再次使用。
+
+* 🎨 **界面优化**
+  对应用界面进行了重新设计，整体更加简洁、直观、易用。
+
+* ⚡ **体验优化**
+  优化部分交互逻辑，修复若干使用过程中的异常问题，提高运行稳定性。
+
+## 使用场景
+
+Go2Go 适合用于以下场景：
+
+* Android 定位功能开发调试
+* 地图 SDK 学习与测试
+* 位置上报功能验证
+* 路线轨迹模拟测试
+* 软件测试课程或项目实训
+* 个人学习 Android 定位机制
+
+> 本项目仅建议用于学习研究、开发调试和合法测试场景，请勿用于违反法律法规、平台规则或侵犯他人权益的行为。
+
+## 运行环境
+
+* Android 7.0 及以上
+* Android Studio
+* JDK 11 或兼容版本
+* 百度地图 Android SDK
+* 已开启 Android 开发者选项
+* 已允许选择模拟位置信息应用
+
+## 快速开始
+
+### 1. 克隆项目
+
+```bash
+git clone https://github.com/gongjiantao/Go2Go.git
+```
+
+### 2. 使用 Android Studio 打开项目
+
+打开 Android Studio，选择：
+
+```text
+File -> Open -> Go2Go
+```
+
+等待 Gradle 自动同步完成。
+
+### 3. 配置百度地图 AK
+
+本项目使用百度地图 SDK，需要前往百度地图开放平台申请 Android SDK 密钥：
+
+```text
+https://lbsyun.baidu.com/
+```
+
+申请完成后，将你的 AK 配置到项目对应位置。
+
+常见配置位置一般在：
+
+```xml
+<meta-data
+    android:name="com.baidu.lbsapi.API_KEY"
+    android:value="你的百度地图AK" />
+```
+
+> 注意：真实项目中不建议把个人 AK、密钥等敏感信息直接提交到公开仓库。
+
+### 4. 开启模拟定位权限
+
+在 Android 手机中打开：
+
+```text
+设置 -> 关于手机 -> 连续点击版本号开启开发者选项
+```
+
+然后进入：
+
+```text
+开发者选项 -> 选择模拟位置信息应用 -> 选择 Go2Go
+```
+
+### 5. 编译运行
+
+连接真机或启动模拟器后，在 Android Studio 中点击：
+
+```text
+Run
+```
+
+即可安装并运行项目。
+
+## 技术栈
+
+* 开发语言：Java
+* 开发平台：Android
+* 地图能力：百度地图 SDK
+* 数据存储：SQLite / SharedPreferences
+* 后台能力：Service
+* UI 设计：Material Design 风格
+* 定位能力：Android Mock Location
+
+## 相比上游项目的改动
+
+本项目在原 GoGoGo 项目基础上主要进行了以下调整：
+
+* 重构部分界面样式，使整体视觉更现代、更统一
+* 优化按钮、卡片、侧边栏等 UI 组件
+* 增加或优化部分交互动画
+* 修复自动路线模拟中的部分异常问题
+* 修复部分设备首次启动或切换状态时的稳定性问题
+* 清理部分冗余代码和无用布局
+* 优化提示文案，提高新手使用体验
+* 补充项目说明文档，方便后续维护和学习
+
+## 项目截图
+
+后续可以在这里补充应用截图，例如：
+
+```text
+docs/images/home.png
+docs/images/map.png
+docs/images/route.png
+```
+
+建议截图包括：
+
+* 欢迎页
+* 主地图界面
+* 搜索地点界面
+* 自动路线模式
+* 悬浮摇杆效果
+* 足迹记录页面
+
+## 注意事项
+
+1. 使用前需要开启 Android 开发者选项。
+2. 使用前需要在系统中选择 Go2Go 作为模拟位置信息应用。
+3. 百度地图 AK 需要自行申请并正确配置。
+4. 部分手机系统可能会限制后台定位或悬浮窗权限，需要手动开启相关权限。
+5. 不同 Android 版本、不同厂商系统的权限入口可能略有差异。
+6. 本项目仅用于学习研究、开发调试和合法测试，不鼓励任何违规使用。
+
+## 免责声明
+
+本项目仅供学习研究、开发调试和合法测试使用。
+
+使用者应遵守所在地区法律法规、应用平台规则以及相关服务协议。因使用者将本项目用于违规、违法或其他不当用途而产生的任何后果，均由使用者自行承担，项目作者不承担相关责任。
+
+下载、安装、运行或使用本项目，即表示你已理解并同意上述说明。
+
+## 贡献说明
+
+欢迎提交 Issue 或 Pull Request，一起改进项目。
+
+你可以参与以下方向：
+
+* 修复 Bug
+* 优化 UI
+* 改进交互体验
+* 补充项目截图
+* 完善使用文档
+* 适配更多 Android 版本
+* 优化百度地图相关功能
+
+## 致谢
+
+感谢原项目作者的开源贡献：
+
+* [ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
+
+本项目在原项目基础上继续学习、修改和优化。
+
+## 项目地址
+
+```text
+https://github.com/gongjiantao/Go2Go
+```
 
 ---
 
-## ✨ 核心特性
-
-- 📍 **精准位置模拟**：支持在地图上任意点选位置，并实时模拟设备 GPS。
-- 🔄 **自动挡 (Auto Routing)**：点击地图添加多个途经点，应用将自动按顺序模拟行进路径。
-- 🎮 **悬浮摇杆控制**：提供屏幕悬浮摇杆，随时随地精准控制模拟移动的方向和速度。
-- 🔍 **智能搜索**：集成百度地图搜索，快速定位到街道、建筑或具体坐标。
-- 📜 **足迹记录**：自动保存历史模拟位置，支持一键找回和快速跳转。
-- 🎨 **现代化 UI 设计**：
-  - 采用 **Material Design** 设计规范。
-  - 拥有丝滑的入场动画与呼吸感背景。
-  - 卡通化圆角风格，视觉体验高级且统一。
-- ⚡ **高性能优化**：极简的布局嵌套，低内存占用，运行流畅不卡顿。
-
----
-
-## 📸 界面预览
-
-| 欢迎页 | 主界面 | 自动模式 |
-| :---: | :---: | :---: |
-| ![Welcome](https://via.placeholder.com/200x400?text=Welcome+Screen) | ![Main](https://via.placeholder.com/200x400?text=Main+Map) | ![Auto](https://via.placeholder.com/200x400?text=Auto+Mode) |
-
----
-
-## 🚀 快速开始
-
-### 环境要求
-- Android 7.0 (API Level 24) 及以上。
-- 开启系统的 **"开发者选项"** -> **"选择模拟位置信息应用"**，并选择 **"Go2Go"**。
-
-### 安装与运行
-1. **克隆仓库**：
-   ```bash
-   git clone https://github.com/gongjiantao/Go2Go.git
-   ```
-2. **配置百度地图 AK**：
-   - 前往 [百度地图开放平台](https://lbsyun.baidu.com/) 申请 Android SDK 密钥。
-   - 在 `AndroidManifest.xml` 中替换您的 AK。
-3. **编译运行**：
-   - 使用 Android Studio 打开项目。
-   - 点击 `Run` 按钮部署到您的真机或模拟器。
-
----
-
-## 🛠️ 技术架构
-
-- **语言**：Java (JDK 11)
-- **地图引擎**：Baidu Map SDK
-- **核心组件**：
-  - `CoordinatorLayout` + `AppBarLayout` 实现高级联动交互。
-  - `Service` 后台运行模拟定位逻辑。
-  - `SharedPreferences` 持久化用户配置。
-  - `SQLite` 存储历史位置信息。
-- **动画系统**：基于 `ViewPropertyAnimator` 实现的硬件加速动画。
-
----
-
-## ⚠️ 免责声明
-
-本软件仅供 **学习研究** 及 **开发调试** 使用，请勿用于任何非法用途！开发者不承担因用户违规使用而产生的任何直接或间接法律责任。使用本软件即表示您已阅读并同意 [服务条款](file:///d:/demo/Mo/gogogo/app/src/main/res/values/strings.xml)。
-
----
-
-## 🤝 贡献与反馈
-
-如果您发现了 Bug 或有更好的功能建议，欢迎提交 [Issue](https://github.com/gongjiantao/Go2Go/issues) 或 Pull Request。
-
-- **联系作者**：微信搜索 `G46645426826` (点击应用内反馈可自动复制)
-- **项目地址**：[https://github.com/gongjiantao/Go2Go](https://github.com/gongjiantao/Go2Go)
-- **上游项目**：[ZCShou/GoGoGo](https://github.com/ZCShou/GoGoGo)
-
----
-
-## 🔄 相比上游的主要改动
-
-- 🎨 **全面 UI 重设计**：引入药丸按钮、圆角描边卡片、暖色系调色板、高级入场动画（Overshoot 弹性缩放 + 背景呼吸效果）及侧边栏现代化改造。
-- 🐛 **问题修复**：修复暂停后恢复自动挡回到起点、部分设备 `bm.clear()` 导致地图跳至几内亚湾、首次启动模拟定位闪退等关键缺陷。
-- 🧹 **代码与布局优化**：移除冗余代码、清理无用按钮、新增友好提示文案；合并布局层级以提升渲染性能。
-- 📝 **完整文档**：重新编写 README，补充项目来源、免责声明与贡献说明。
-
----
-
-⭐ 如果这个项目对你有帮助，请给它一个 Star！你的支持是开发者最大的动力。
+如果这个项目对你有帮助，欢迎点一个 Star ⭐
