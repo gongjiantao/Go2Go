@@ -1164,6 +1164,16 @@ public class HomeAct extends BaseAct implements SensorEventListener {
                     Snackbar.make(v, "模拟位置已启动", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
 
+                    if (sp.getBoolean("first_loc_hint", true)) {
+                        new AlertDialog.Builder(this)
+                                .setTitle("提示")
+                                .setMessage("首次运行定位服务时，部分手机可能会闪退，别担心，重新打开即可正常使用。")
+                                .setPositiveButton("知道了", (d, w) -> {
+                                    sp.edit().putBoolean("first_loc_hint", false).apply();
+                                })
+                                .show();
+                    }
+
                     saveLoc(mkPt.longitude, mkPt.latitude);
                     bm.clear();
                     mkPt = null;

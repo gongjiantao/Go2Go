@@ -72,16 +72,17 @@ public class LocSvc extends Service {
 
         lm = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
-        rmNet();
-        addNet();
-
-        rmGps();
-        addGps();
+        try {
+            rmNet();
+            addNet();
+            rmGps();
+            addGps();
+        } catch (Exception e) {
+            XLog.e("LocSvc: mock provider setup failed, will retry in background", e);
+        }
 
         initLoc();
-
         initNotif();
-
         initJsk();
     }
 
@@ -204,20 +205,15 @@ public class LocSvc extends Service {
 
     private void rmGps() {
         try {
-            if (lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                lm.setTestProviderEnabled(LocationManager.GPS_PROVIDER, false);
-                lm.removeTestProvider(LocationManager.GPS_PROVIDER);
-            }
-        } catch (Exception e) {
-            XLog.e("LocSvc: ERROR - rmGps");
+            lm.removeTestProvider(LocationManager.GPS_PROVIDER);
+        } catch (Exception ignored) {
         }
     }
 
-    // 注意下面临时添加 @SuppressLint("wrongconstant") 以处理 addTestProvider 参数值的 lint 错误
     @SuppressLint("wrongconstant")
     private void addGps() {
         try {
-            // 注意，由于 android api 问题，下面的参数会提示错误(以下参数是通过相关API获取的真实GPS参数，不是随便写的)
+            rmGps();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 lm.addTestProvider(LocationManager.GPS_PROVIDER, false, true, false,
                         false, true, true, true, ProviderProperties.POWER_USAGE_HIGH, ProviderProperties.ACCURACY_FINE);
@@ -225,52 +221,43 @@ public class LocSvc extends Service {
                 lm.addTestProvider(LocationManager.GPS_PROVIDER, false, true, false,
                         false, true, true, true, Criteria.POWER_HIGH, Criteria.ACCURACY_FINE);
             }
-            if (!lm.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                lm.setTestProviderEnabled(LocationManager.GPS_PROVIDER, true);
-            }
+            lm.setTestProviderEnabled(LocationManager.GPS_PROVIDER, true);
         } catch (Exception e) {
-            XLog.e("LocSvc: ERROR - addGps");
+            XLog.e("LocSvc: ERROR - addGps", e);
         }
     }
 
     private void setGps() {
         try {
-            // 尽可能模拟真实的 GPS 数据
             Location loc = new Location(LocationManager.GPS_PROVIDER);
-            loc.setAccuracy(Criteria.ACCURACY_FINE);    // 设定此位置的估计水平精度，以米为单位。
-            loc.setAltitude(alt);                     // 设置高度，在 WGS 84 参考坐标系中的米
-            loc.setBearing(bea);                       // 方向（度）
-            loc.setLatitude(lat);                   // 纬度（度）
-            loc.setLongitude(lng);                  // 经度（度）
-            loc.setTime(System.currentTimeMillis());    // 本地时间
+            loc.setAccuracy(Criteria.ACCURACY_FINE);
+            loc.setAltitude(alt);
+            loc.setBearing(bea);
+            loc.setLatitude(lat);
+            loc.setLongitude(lng);
+            loc.setTime(System.currentTimeMillis());
             loc.setSpeed((float) spd);
             loc.setElapsedRealtimeNanos(SystemClock.elapsedRealtimeNanos());
             Bundle bundle = new Bundle();
             bundle.putInt("satellites", 7);
             loc.setExtras(bundle);
-
             lm.setTestProviderLocation(LocationManager.GPS_PROVIDER, loc);
         } catch (Exception e) {
-            XLog.e("LocSvc: ERROR - setGps");
+            XLog.e("LocSvc: ERROR - setGps", e);
         }
     }
 
     private void rmNet() {
         try {
-            if (lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-                lm.setTestProviderEnabled(LocationManager.NETWORK_PROVIDER, false);
-                lm.removeTestProvider(LocationManager.NETWORK_PROVIDER);
-            }
-        } catch (Exception e) {
-            XLog.e("LocSvc: ERROR - rmNet");
+            lm.removeTestProvider(LocationManager.NETWORK_PROVIDER);
+        } catch (Exception ignored) {
         }
     }
 
-    // 注意下面临时添加 @SuppressLint("wrongconstant") 以处理 addTestProvider 参数值的 lint 错误
     @SuppressLint("wrongconstant")
     private void addNet() {
         try {
-            // 注意，由于 android api 问题，下面的参数会提示错误(以下参数是通过相关API获取的真实NETWORK参数，不是随便写的)
+            rmNet();
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 lm.addTestProvider(LocationManager.NETWORK_PROVIDER, true, false,
                         true, true, true, true,
@@ -280,30 +267,26 @@ public class LocSvc extends Service {
                         true, true, true, true,
                         true, Criteria.POWER_LOW, Criteria.ACCURACY_COARSE);
             }
-            if (!lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-                lm.setTestProviderEnabled(LocationManager.NETWORK_PROVIDER, true);
-            }
-        } catch (SecurityException e) {
-            XLog.e("LocSvc: ERROR - addNet");
+            lm.setTestProviderEnabled(LocationManager.NETWORK_PROVIDER, true);
+        } catch (Exception e) {
+            XLog.e("LocSvc: ERROR - addNet", e);
         }
     }
 
     private void setNet() {
         try {
-            // 尽可能模拟真实的 NETWORK 数据
             Location loc = new Location(LocationManager.NETWORK_PROVIDER);
-            loc.setAccuracy(Criteria.ACCURACY_COARSE);  // 设定此位置的估计水平精度，以米为单位。
-            loc.setAltitude(alt);                     // 设置高度，在 WGS 84 参考坐标系中的米
-            loc.setBearing(bea);                       // 方向（度）
-            loc.setLatitude(lat);                   // 纬度（度）
-            loc.setLongitude(lng);                  // 经度（度）
-            loc.setTime(System.currentTimeMillis());    // 本地时间
+            loc.setAccuracy(Criteria.ACCURACY_COARSE);
+            loc.setAltitude(alt);
+            loc.setBearing(bea);
+            loc.setLatitude(lat);
+            loc.setLongitude(lng);
+            loc.setTime(System.currentTimeMillis());
             loc.setSpeed((float) spd);
             loc.setElapsedRealtimeNanos(SystemClock.elapsedRealtimeNanos());
-
             lm.setTestProviderLocation(LocationManager.NETWORK_PROVIDER, loc);
         } catch (Exception e) {
-            XLog.e("LocSvc: ERROR - setNet");
+            XLog.e("LocSvc: ERROR - setNet", e);
         }
     }
 
