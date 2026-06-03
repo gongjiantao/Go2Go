@@ -1,4 +1,4 @@
-# 随便走 (Map_mode) 🌍
+# 随便走 (Go2Go) 🌍
 
 [![Android Version](https://img.shields.io/badge/Android-7.0%2B-green.svg)](https://developer.android.com)
 [![Version](https://img.shields.io/badge/Version-1.0.1-blue.svg)](https://github.com/gongjiantao/Map_mode/releases)
