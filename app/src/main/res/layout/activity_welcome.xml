@@ -31,7 +31,7 @@
             android:layout_below="@id/welcome_title"
             android:layout_marginTop="10dp"
             android:layout_centerHorizontal="true"
-            android:text="@string/app_mode"
+            android:text="@string/welcome_subtitle"
             android:textSize="18sp"
             android:textColor="#FFE0C0A0"
             android:letterSpacing="0.08"
@@ -44,7 +44,7 @@
             android:layout_below="@id/welcomeSubTitle"
             android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"
-            android:text="@string/launch_info"
+            android:text="@string/app_service_tips"
             android:textSize="16sp"
             android:textColor="#EEFFE0B2"
             android:gravity="center_horizontal" />

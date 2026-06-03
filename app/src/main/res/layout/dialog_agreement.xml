@@ -33,7 +33,7 @@
             android:id="@+id/dlg_agreement_check"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/agreement_check"
+            android:text="@string/app_agreement_privacy"
             android:textColor="@color/textSecondary"
             android:layout_marginBottom="10dp" />
 
