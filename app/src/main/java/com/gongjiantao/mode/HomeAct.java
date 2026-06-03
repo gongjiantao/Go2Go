@@ -693,9 +693,7 @@ public class HomeAct extends BaseAct implements SensorEventListener {
         routePlay.setImageResource(R.drawable.ic_play);
         routePoints.clear();
         routeCount.setText("0 个途经点");
-        if (bm != null) {
-            bm.clear();
-        }
+        // 不操作地图，避免部分设备 bm.clear() 导致渲染闪到 0,0
     }
 
     public void enterAutoMode() {
@@ -770,7 +768,6 @@ public class HomeAct extends BaseAct implements SensorEventListener {
                         routePlay.setImageResource(R.drawable.ic_play);
                         routeTips.setText("路线终点已到达");
                         routeTips.setBackgroundColor(0xCCFF6D5A);
-                        if (bm != null) bm.clear();
                         return;
                     }
                 }
