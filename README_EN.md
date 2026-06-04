@@ -148,13 +148,6 @@ Compared to the original GoGoGo project, this version includes:
 | :---: | :---: | :---: |
 | ![Welcome](docs/images/home.png) | ![Main Map](docs/images/map.png) | ![Route](docs/images/route.png) |
 
-| Search History | Joystick | GPS Service |
-| :---: | :---: | :---: |
-| ![History](docs/images/search_history.jpg) | ![Joystick](docs/images/joystick.jpg) | ![GPS](docs/images/gps.png) |
-
-| Location Options | App Icon |
-| :---: | :---: |
-| ![Options](docs/images/passive.png) | ![Icon](docs/images/LOGO.png) |
 
 ## Notes
 
