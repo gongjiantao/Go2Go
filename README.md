@@ -1,7 +1,7 @@
 # Go2Go 🌍
 
 [![Android](https://img.shields.io/badge/Android-7.0%2B-green.svg)](https://developer.android.com/)
-[![Version](https://img.shields.io/badge/Version-1.0.1-blue.svg)](https://github.com/gongjiantao/Go2Go/releases)
+[![Version](https://img.shields.io/badge/Version-1.0.2-blue.svg)](https://github.com/gongjiantao/Go2Go/releases)
 [![License](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 
 > 一款基于百度地图 SDK 开发的 Android 位置模拟与足迹记录工具，支持地图选点、路线模拟、摇杆控制和历史足迹记录，适用于开发调试、地图功能测试与定位相关学习研究。
