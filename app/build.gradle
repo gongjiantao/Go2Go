@@ -27,7 +27,7 @@ android {
 
     defaultConfig {
         applicationId "com.gongjiantao.mode"
-        minSdkVersion 27
+        minSdkVersion 26
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 32
         versionCode 1123

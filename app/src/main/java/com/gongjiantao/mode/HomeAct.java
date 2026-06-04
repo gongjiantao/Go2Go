@@ -207,7 +207,12 @@ public class HomeAct extends BaseAct implements SensorEventListener {
 
         initNav();
 
-        initMap();
+        try {
+            initMap();
+        } catch (Exception e) {
+            XLog.e("HomeAct: initMap failed", e);
+            SysUtil.toast(this, "地图初始化失败，请重试");
+        }
 
         initRouteBar();
 

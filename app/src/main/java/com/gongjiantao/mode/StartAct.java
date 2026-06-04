@@ -57,8 +57,22 @@ public class StartAct extends AppCompatActivity {
         startBtn.setOnClickListener(v -> goHome());
 
         chkAgreement();
-        runEntranceAnimation();
-        startBgBreath();
+        try {
+            runEntranceAnimation();
+            startBgBreath();
+        } catch (Exception e) {
+            // fallback: show everything immediately if animation fails
+            findViewById(R.id.welcome_logo).setAlpha(1f);
+            findViewById(R.id.welcome_logo).setScaleX(1f);
+            findViewById(R.id.welcome_logo).setScaleY(1f);
+            findViewById(R.id.welcome_title).setAlpha(1f);
+            findViewById(R.id.welcome_title).setTranslationY(0);
+            findViewById(R.id.welcome_subtitle).setAlpha(1f);
+            findViewById(R.id.welcome_subtitle).setTranslationY(0);
+            findViewById(R.id.startButton).setAlpha(1f);
+            findViewById(R.id.startButton).setScaleX(1f);
+            findViewById(R.id.startButton).setScaleY(1f);
+        }
     }
 
     private void startBgBreath() {
