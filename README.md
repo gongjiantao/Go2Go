@@ -198,3 +198,5 @@ https://github.com/gongjiantao/Go2Go
 ---
 
 如果这个项目对你有帮助，欢迎点一个 Star ⭐
+
+*For English version, see [README_EN.md](README_EN.md)*
